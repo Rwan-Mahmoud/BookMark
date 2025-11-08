@@ -1,0 +1,113 @@
+:root {
+  --main1: rgb(254, 194, 96);
+  --main2: #352e28;
+  --main3: #d1512d;
+}
+
+.button1-bg{
+    background-color: var(--main3);
+    transition: background-color 500ms;
+}
+
+.button1-bg:hover{
+  background-color: #722d19;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  color: var(--main2);
+  width: fit-content;
+  position: relative;
+  z-index: 0;
+}
+h1::before {
+  content: "";
+  width: 100%;
+  height: 25%;
+  position: absolute;
+  background-color: var(--main1);
+  left: 0px;
+  bottom: 3px;
+  z-index: -1;
+  transition: height 500ms;
+}
+h1:hover::before {
+  height: 60%;
+}
+h2 {
+  font-family: "Righteous", sans-serif;
+  background-image: linear-gradient(to right, #469969, #bbad45);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section {
+  background-color: #f7ecde;
+  display: flow-root;
+}
+
+.bookscontainer {
+  border-top: 2px dotted var(--main2);
+  border-bottom: 2px dotted var(--main2);
+
+  width: 100%;
+}
+
+.form-control{
+    border-color:  var(--bs-border-color); ;
+}
+
+.form-control:focus{
+    border-color:var(--main1);
+    box-shadow: 0 0 0 .25rem rgba(254,194,96,.25);
+
+}
+
+.visit_button{
+  background-color: #9eb23b ;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  /* margin-right: -15px; */
+  transition: all 500ms;
+}
+
+.visit_button:hover{
+  background-color: #8a9e23;
+  border: 1px solid #fff;
+}
+
+.delete{
+   border: 1px solid transparent;
+  border-radius: 10px;
+  background-color:#eb1d36;
+  transition: all 500ms;
+
+}
+.delete:hover{
+  background-color: #d30820;
+  border: 1px solid #fff;
+}
+
+p{
+  color: crimson;
+ margin-bottom: 5px;
+}
+
+p.no-sites {
+  color: #ff4d4d;
+  font-size: 1.3rem;          
+  font-weight: 600;           
+  text-align: center;          
+  background-color: #ffeaea;   
+  padding: 10px 20px;         
+  border-radius: 10px;       
+  width: fit-content;         
+  margin: 20px auto;          
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+  animation: fadeIn 0.6s ease-in-out; 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

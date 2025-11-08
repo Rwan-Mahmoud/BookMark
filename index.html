@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMark</title>
+    <link rel="icon" type="image/x-icon" href="/images/bookmark.png">
+
+    <!-- ! fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ! font awesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- ! Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- ! Main style -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="w-100 min-vh-100">
+      <div
+        class="container d-flex flex-column justify-content-center align-items-center"
+      >
+        <h1 class="my-5 display-3">Bookmarker</h1>
+
+        <div
+          class="w-100 bookscontainer d-flex flex-column justify-content-center align-items-center mt-5 p-4"
+        >
+          <h2>
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+
+          <form
+            action="#"
+            class="w-100 d-flex flex-column align-items-center justify-content-center"
+          >
+            <div class=" w-100">
+              <label
+                for="exampleFormControlInput1"
+                class="mb-1 fw-bold form-label"
+              >
+                <i class="fa-solid fa-floppy-disk"></i>
+                Site Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="siteNameInput"
+                placeholder="Bookmark Name"
+                autocomplete="off"
+                oninput="validate(validateName , siteName)"
+              />
+               <p class="invisible" id="error">
+                *The Site name must start with a capital letter followed by
+                three lowercase letters at least.*
+              </p>
+            </div>
+
+            <div class=" w-100">
+              <label
+                for="exampleFormControlInput1"
+                class=" mb-1 fw-bold form-label"
+              >
+                <i class="fa-solid fa-link"></i>
+                Site URL</label
+              >
+              <input
+                type="url"
+                class="form-control"
+                id="siteUrlInput"
+                placeholder="Website URL"
+                autocomplete="off"
+                oninput="validate(validateUrl , siteUrl)"
+              />
+                <p class="invisible" id="error">
+                *Enter valid email*
+              </p>
+            </div>
+
+            <button
+              class=" border-0 rounded-1 px-5 py-1 button1-bg text-white"
+              onclick="addSite()"
+              type="button"
+            >
+              Submit
+            </button>
+
+               <input
+                type="search"
+                class="form-control mt-3"
+                id="searchSiteInput"
+                placeholder="search websites..."
+                autocomplete="off"
+                oninput="searchSite()"
+              />
+
+          </form>
+        </div>
+      </div>
+
+      <div class="container my-3">
+        <div>
+          <!-- <table>
+          <thead>
+            <th>index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </thead>
+          <tbody>
+            <tr></tr>
+          </tbody>
+        </table> -->
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+
+            <tbody id="tableRows">
+            </tbody>
+          </table>
+          
+              <p class="no-sites invisible text-center" id="noSites">No sites found!!</p>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
